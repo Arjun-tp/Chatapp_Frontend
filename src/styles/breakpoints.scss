@@ -1,0 +1,24 @@
+//https://medium.com/developing-with-sass/refactoring-my-simple-sass-breakpoint-mixin-71205dd6badd
+$xs: ( max:  40em ); // max-width 640px, mobile first
+$sm: ( min:  40.063em ); // min-width 641px, medium screens
+$tm: ( min:  60em ); // min-width 960px, tablet portrait
+$md: ( min:  64.063em ); // min-width 1025px, large screens
+$lg: ( min: 90.063em); // min-width 1441px, xlarge screens
+$xl: ( min:120.063em); // min-width 1921px, xxlarge screens
+
+$sm-only: ( min: map-get($sm, min), max: map-get($md, min) - 1 ); //641 - 1024
+$tm-only: ( min: map-get($tm, min), max: map-get($md, min) - 1 ); //960 - 1024
+$md-only: ( min: map-get($md, min), max: map-get($lg, min) - 1 ); //1025 -1440
+$lg-only: ( min: map-get($lg, min), max: map-get($xl, min) - 1 ); //1441 -1920
+
+@mixin breakpoint($map) {
+  $query: "";
+
+  @if map-has-key($map, min) { $query: append($query, "(min-width: #{map-get($map, min)})") }
+
+  @if map-has-key($map, min) and map-has-key($map, max) { $query: append($query, "and") }
+
+  @if map-has-key($map, max) { $query: append($query, "(max-width: #{map-get($map, max)})") }
+
+  @media screen and #{$query} { @content; }
+}

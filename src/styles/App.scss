@@ -1,0 +1,157 @@
+@import "./breakpoints.scss";
+html, body, #root, .App, .App>div {
+  height: 100%
+}
+
+// .App {
+//   text-align: center;
+// }
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.statusBar {
+  background-color: #eeeeee;
+  padding: 10px 16px;
+  height: 59px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid #DBDBDB;
+  border-bottom: 1px solid #DBDBDB;
+  a {
+    margin-right: 0;
+    margin-left: auto;
+  }
+}
+.friends {
+  height: 100%; 
+  width: 100%;
+  &__searchbar {
+    padding: 0.4em 1em; 
+    background-color: #F8F8F8;
+    input {
+      height: 35px;
+      width: 90%; 
+      border-width: 0;
+      border-radius: 17.5px;
+      padding: 0 1.25em;
+      font-size: 14px;
+    }
+  }
+  &__list {
+    a {
+      width: '100%';
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+      border-bottom: 1px solid #e9ebeb;
+      background-color: #FFF;
+      padding: 0 0.8em;
+      display: flex;
+      flex-direction: row;
+      text-decoration: none;
+      overflow-y: auto;
+      color: #000;
+      &:hover {
+        background-color: #f4f5f5;
+      }
+      &:target {
+        background-color: #E9EBEB;
+      }
+      
+    }
+    
+  }
+}
+
+.chat__window {
+  height: 100%;
+  margin: 0;
+  &--conversation {
+    width: 100%;
+    background-color: #ece5dd;
+    height: 100%;
+    ul {
+      margin-top: auto;
+      margin-bottom: 0;
+      height: auto;
+      list-style-type: none;
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: flex-start;
+      padding: 1em;
+      li {
+        margin-top: auto;
+        margin-bottom: 0;
+        padding: 1em;
+        border-radius: 0px;
+        border-top-right-radius: 0px;
+        color: #000;
+        margin-top: 0.3em;
+        font-size: 14px;
+        font-family: inherit;
+        padding: 6px 7px 8px 9px;
+      }
+      .my-message {
+        margin-right: 0;
+        margin-left: auto;
+        background-color: #78c33d;
+      }
+      .friend-message {
+
+        margin-left: 0;
+        margin-right: auto;
+        background-color: #FFF;
+      }
+    }
+  }
+  .chatform { 
+    background: #000; 
+    padding: 1px; 
+    position: fixed; 
+    bottom: 0;
+    width: 74.6%;
+    display: flex;
+    flex-direction: row;
+  }
+  .chatform input { 
+    border: 0; 
+    padding: 10px; 
+    flex: 9;
+  }
+  .chatform button { 
+    flex: 1; 
+    background: rgb(130, 224, 255); 
+    border: none; 
+  }
+}
+
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
