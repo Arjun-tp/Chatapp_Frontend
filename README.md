@@ -1,14 +1,12 @@
 # Chatapp_Frontend
+# Connected with chatapp_backend
 
-chat_server => npm install => node app.js
 chat_frontend => npm install => npm start
 Node version : 11.13.0
 
 Used Technologies:
-NodeJs
 ReactJs
 Socket io
-MongoDb
 
 
 How to test:
